@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-reports1.html"},//raporu almamizi saglayan plugin
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@wip",
+        tags = "",
         dryRun = false
 )
 public class TestRunner {

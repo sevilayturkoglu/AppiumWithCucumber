@@ -1,22 +1,22 @@
 Background: Kullanicilar bu adimlar sayesinde ayni adimlari yazmalarina gerek kalmadan before mantiginda backrounda da calistirir
-* Kullanici browseri acar adresine
-* Kullanici "https://qa.mealscenter.com/" adresine
-* Kullanici cokkies 406 1654 i kabul eder
-* Uc cizgi butonuna tiklar
-* Kullanici SignIn butonuna tiklar
+Given Kullanici browseri acar adresine
+Then Kullanici "https://qa.mealscenter.com/" adresine
+Then Kullanici cokkies 406 1654 i kabul eder
+Then Uc cizgi butonuna tiklar
+Then Kullanici SignIn butonuna tiklar
 
 Scenario: "Sign in" linkine tiklayinca login sayfasina yonlendirilmeli
-* Kullanici login sayfasina yonlendirildigini dogrular
-* Kullanici sayfayi kapatir
+Given Kullanici login sayfasina yonlendirildigini dogrular
+And Kullanici sayfayi kapatir
 
 Scenario:Gecerli email ve password ile login olabilmeli, basarili giris yapildiginde header sag ustte kullanici adı gorulmelidir
-*  Kullanici emailBox a "mailMeal" passwordbox a bir "sifre" gonderir
-*  Kullanici giris islemini dogrular
-*  Kullanici sayfayi kapatir
-@smoke
+Given Kullanici emailBox a "mailMeal" passwordbox a bir "sifre" gonderir
+Then  Kullanici giris islemini dogrular
+And  Kullanici sayfayi kapatir
+
 Scenario Outline: Kullanici gecersiz mail ve sifre bilgileriyle giris yapmamalidir
-*  Kullanici emailBox a "<mailMeal>" passwordbox a bir "<sifre>" gonderir
-*  Kullanici sayfayi kapatir
+Given  Kullanici emailBox a "<mailMeal>" passwordbox a bir "<sifre>" gonderir
+And  Kullanici sayfayi kapatir
 Examples:
 | mailMeal |sifre |
 | olumsuzmail1 |olumsuzsifre1|
