@@ -10,16 +10,10 @@ import utils.BrowserDriver;
 public class AmazonBrowserStepDefinition {
 AmazonPage amazonPage=new AmazonPage();
 
-    @Given("Kullanici {string} adresine")
-    public void kullanici_adresine(String url) {
-        BrowserDriver.getBrowserDriver().get(url);
-    }
-    @Given("Kullanici arama kutusunda {string} aratir")
+
+@Given("Kullanici arama kutusunda {string} aratir")
     public void kullanici_arama_kutusunda_aratir(String aranacakKelime) {
-        amazonPage.amazonAramaKutusu.sendKeys(aranacakKelime);
-       /* Actions actions=new Actions(BrowserDriver.getBrowserDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();*/
-        // BrowserDriver.getBrowserDriver().rotate(new DeviceRotation(270,270,270));
+        amazonPage.amazonAramaKutusu.sendKeys(aranacakKelime+Keys.ENTER);
     }
     }
 
